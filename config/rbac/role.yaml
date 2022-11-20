@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - hello.parham.home
+  resources:
+  - helloers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - hello.parham.home
+  resources:
+  - helloers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - hello.parham.home
+  resources:
+  - helloers/status
+  verbs:
+  - get
+  - patch
+  - update

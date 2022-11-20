@@ -1,0 +1,31 @@
+# permissions for end users to edit helloers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: helloer-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: operator101
+    app.kubernetes.io/part-of: operator101
+    app.kubernetes.io/managed-by: kustomize
+  name: helloer-editor-role
+rules:
+- apiGroups:
+  - hello.parham.home
+  resources:
+  - helloers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - hello.parham.home
+  resources:
+  - helloers/status
+  verbs:
+  - get

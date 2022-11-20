@@ -1,0 +1,12 @@
+apiVersion: hello.parham.home/v1alpha1
+kind: Helloer
+metadata:
+  labels:
+    app.kubernetes.io/name: helloer
+    app.kubernetes.io/instance: helloer-sample
+    app.kubernetes.io/part-of: operator101
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: operator101
+  name: helloer-sample
+spec:
+  # TODO(user): Add fields here
