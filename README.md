@@ -29,3 +29,6 @@ Then you can bundle the operator and install it:
 make bundle
 operator-sdk run bundle
 ```
+
+By making bundle, you will make a cluster service version which is defined in
+`config/manifests/bases/operator101.clusterserviceversion.yaml`.
