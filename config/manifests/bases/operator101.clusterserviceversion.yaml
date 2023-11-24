@@ -1,0 +1,50 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: operator101.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: Helloer is the Schema for the helloers API
+      displayName: Helloer
+      kind: Helloer
+      name: helloers.hello.parham.home
+      version: v1alpha1
+  description: How write an operator
+  displayName: Operator 101
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - 1995parham
+  - operator101
+  - hello-world
+  links:
+  - name: Operator101
+    url: https://operator101.domain
+  maintainers:
+  - email: parham.alvani@gmail.com
+    name: Parham Alvani
+  maturity: alpha
+  provider:
+    name: 1995parham
+    url: https://1995parham.me
+  version: 0.0.0
