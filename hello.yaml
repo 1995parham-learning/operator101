@@ -1,0 +1,7 @@
+apiVersion: hello.parham.home/v1alpha1
+kind: Helloer
+metadata:
+  name: "hello"
+  labels:
+    app: "hello"
+spec:
