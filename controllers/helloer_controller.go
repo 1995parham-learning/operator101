@@ -47,7 +47,17 @@ type HelloerReconciler struct {
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.13.0/pkg/reconcile
 func (r *HelloerReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
-	_ = log.FromContext(ctx)
+	logger := log.FromContext(ctx)
+
+	logger.Info("there is a new request", "name", req.Name)
+
+	obj := new(hellov1alpha1.Helloer)
+
+	if err := r.Get(ctx, req.NamespacedName, obj); err != nil {
+		return ctrl.Result{}, nil
+	}
+
+	logger.Info("we have a new object for saying hello", "to", obj.Spec.To)
 
 	// TODO(user): your logic here
 
