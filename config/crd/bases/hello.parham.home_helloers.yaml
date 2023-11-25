@@ -35,9 +35,7 @@ spec:
           spec:
             description: HelloerSpec defines the desired state of Helloer
             properties:
-              foo:
-                description: Foo is an example field of Helloer. Edit helloer_types.go
-                  to remove/update
+              to:
                 type: string
             type: object
           status:
